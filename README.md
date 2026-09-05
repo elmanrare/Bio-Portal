@@ -115,5 +115,8 @@ Bio Portal/
 └── theme.js             # Light/dark theme controller
 ```
 
+![Dark Mode](https://github.com/user-attachments/assets/6715d21b-6b35-4e6c-93fb-533f01bccf9c)
+
+![Light Mode](https://github.com/user-attachments/assets/64ad1398-5f75-4e07-8302-dcaaf198f6c4)
 
 
