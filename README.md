@@ -87,6 +87,7 @@ npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css
 ## Setting up Discord status
 
 Go to `discord.js`, and change the given ID with your own ID.
+Also you have to join [Lanyard's discord](discord.gg/lanyard) for getting your status
 
 ## External Services
 
