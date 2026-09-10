@@ -1,3 +1,6 @@
+# Also
+You can buy me a coffe if you love the project : (Patreon)[https://www.patreon.com/16736283/join]
+
 # Bio Portal
 
 A lightweight personal bio-link page built with HTML, Tailwind CSS, and vanilla JavaScript. It combines a glass-style profile card with social links, Discord presence, a visitor counter, a video background, and a multi-track music player.
