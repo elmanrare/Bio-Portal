@@ -1,14 +1,15 @@
-# Also
-You can buy me a coffe if you love the project : [Patreon](https://www.patreon.com/16736283/join)
-
 # Bio Portal
 
-A lightweight personal bio-link page built with HTML, Tailwind CSS, and vanilla JavaScript. It combines a glass-style profile card with social links, Discord presence, a visitor counter, a video background, and a multi-track music player.
+A lightweight personal bio-link page built with HTML, Tailwind CSS, and vanilla JavaScript. It pairs a glass-style profile card with social links, live Discord presence, a visitor counter, a video background, and a multi-track music player.
+
+![Dark Mode](assets/preview/dark-mode.png)
+
+![Light Mode](assets/preview/light-mode.png)
 
 ## Features
 
-- Profile name, avatar, bio, badges, location, and social links configured from one file
-- Real-time Discord status through the [Lanyard API], visit their repo for installation (https://github.com/Phineas/lanyard)
+- Profile name, avatar, bio, badges, location, and social links configured from a single file
+- Real-time Discord status through the [Lanyard API](https://github.com/Phineas/lanyard)
 - Unique visitor counting through CountAPI and browser `localStorage`
 - Play, pause, previous, next, seek, and volume controls for local audio tracks
 - Light and dark theme styling controlled through `theme.js`
@@ -20,18 +21,18 @@ A lightweight personal bio-link page built with HTML, Tailwind CSS, and vanilla 
 
 ## Getting Started
 
-1. Install the dependencies:
+1. Install the dependencies and start the Tailwind watcher:
 
-	 ```bash
-	 npm install
-     npm run dev
-	 ```
+   ```bash
+   npm install
+   npm run dev
+   ```
 
-2. Start a local static server from the project root. For example, with `serve`:
+2. Serve the project root with any static server. For example, with `serve`:
 
-	 ```bash
-	 npx serve .
-	 ```
+   ```bash
+   npx serve .
+   ```
 
 The page can be deployed to GitHub Pages, Netlify, or any static hosting provider. Keep the project files and asset paths together when uploading the site.
 
@@ -72,12 +73,9 @@ themeController.toggleTheme();
 
 The current default is set by `forcedTheme` in `theme.js`. Change it to `"light"` or `"dark"` to choose the initial appearance. The theme preference is also stored in `localStorage` under `elman-theme`.
 
-## Changing the songs
+## Changing the Songs
 
-You can also change the song from `config.js` by changing "./songs/[YOUR-MP3-FILE].
-Keep in my that the code gets the data from mp3 file itself.
-That means you should get your mp3 file with TIT2 (title), TPE1 (artist name) and APIC(cover art) datas or add it yourself. You can use this website ["https://banger.show/tools/mp3-tag-editor"]
-
+Update the `songs` array in `config.js` and point each entry to a file in `songs/`. The player reads track metadata directly from the MP3 file, so each file should include its `TIT2` (title), `TPE1` (artist), and `APIC` (cover art) tags. You can add or edit those tags with a tool such as [banger.show's MP3 tag editor](https://banger.show/tools/mp3-tag-editor).
 
 ## Rebuilding CSS
 
@@ -87,10 +85,9 @@ Tailwind source styles are in [`src/input.css`](src/input.css), while the page l
 npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css
 ```
 
-## Setting up Discord status
+## Setting Up Discord Status
 
-Go to `discord.js`, and change the given ID with your own ID.
-Also you have to join [Lanyard's discord](discord.gg/lanyard) for getting your status
+Open `discord.js` and replace the sample ID with your own Discord user ID. You also need to join [Lanyard's Discord server](https://discord.gg/lanyard) so your presence is tracked.
 
 ## External Services
 
@@ -104,7 +101,7 @@ The page still works as a static profile if one of these services is unavailable
 
 ```text
 Bio Portal/
-├── assets/              # Background video, avatar, favicon, and custom font
+├── assets/              # Background video, avatar, favicon, custom font, and preview images
 ├── songs/               # Local audio tracks
 ├── src/
 │   ├── input.css        # Tailwind source and custom styles
@@ -118,8 +115,6 @@ Bio Portal/
 └── theme.js             # Light/dark theme controller
 ```
 
-![Dark Mode](https://github.com/user-attachments/assets/6715d21b-6b35-4e6c-93fb-533f01bccf9c)
+## Support
 
-![Light Mode](https://github.com/user-attachments/assets/64ad1398-5f75-4e07-8302-dcaaf198f6c4)
-
-
+If you enjoy the project, you can support it on [Patreon](https://www.patreon.com/16736283/join).
