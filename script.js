@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (socialContainer && config.socials && Array.isArray(config.socials)) {
     socialContainer.innerHTML = config.socials.map(link => `
       <a href="${link.url}" target="_blank" rel="noopener noreferrer" 
-         class="social-link p-3 bg-white/10 hover:bg-white/20 border border-white/10 rounded-xl backdrop-blur-md transition-all duration-300 hover:scale-110 flex items-center justify-center"
+         class="social-link p-2 transition-all duration-300 hover:scale-110 flex items-center justify-center"
         aria-label="${link.title || link.label || 'Social profile'}" title="${link.title || link.label || 'Social profile'}">
         <i class="${link.icon} text-gray-700 text-xl" aria-hidden="true"></i>
       </a>
