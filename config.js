@@ -21,7 +21,7 @@ window.config = {
     // Add more songs as needed copy the format below and paste it in the array
   ],
   socials: [
-    { title: "GitHub", url: "https://github.com/elmanrare", icon: "fa-brands fa-github text-gray-700 dark:text-cyan-400 text-2xl" },
+    { title: "GitHub", url: "https://github.com/elmanrare", icon: "fa-brands fa-github text-gray-700 dark:text-cyan-400 text-2xl filter drop-shadow-[0_0_15px_rgba(59,130,246,0.7)]" },
     { title: "Instagram", url: "https://www.instagram.com/elmannq/", icon: "fa-brands fa-instagram text-gray-700 dark:text-cyan-400 text-2xl" },
     // You can add more socials, just replace fa-instagram part with another social media name from fontawesome icons,
     // and change the url to your social media link. You can find more icons at https://fontawesome.com/icons

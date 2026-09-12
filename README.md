@@ -6,6 +6,9 @@ A lightweight personal bio-link page built with HTML, Tailwind CSS, and vanilla 
 
 ![Light Mode](assets/preview/light-mode.png)
 
+## NOTE
+If you cant understand what to do ask it to an AI model thats the easy way to customize your Bio Portal
+
 ## Features
 
 - Profile name, avatar, bio, badges, location, and social links configured from a single file
@@ -73,6 +76,9 @@ themeController.toggleTheme();
 
 The current default is set by `forcedTheme` in `theme.js`. Change it to `"light"` or `"dark"` to choose the initial appearance. The theme preference is also stored in `localStorage` under `elman-theme`.
 
+### Setting your timezone 
+The current timezone is GMT+4 or Asia/Tbilisi if your timezone matchs with that dont touch but if its not just change it with YourRegion/YourCity
+
 ## Changing the Songs
 
 Update the `songs` array in `config.js` and point each entry to a file in `songs/`. The player reads track metadata directly from the MP3 file, so each file should include its `TIT2` (title), `TPE1` (artist), and `APIC` (cover art) tags. You can add or edit those tags with a tool such as [banger.show's MP3 tag editor](https://banger.show/tools/mp3-tag-editor).
@@ -118,3 +124,5 @@ Bio Portal/
 ## Support
 
 If you enjoy the project, you can support it on [Patreon](https://www.patreon.com/16736283/join).
+
+You got questions? join the [Discord](https://discord.gg/Gm56jrnTCS)

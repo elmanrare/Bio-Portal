@@ -17,7 +17,7 @@
     return setTheme(getTheme() === "dark" ? "light" : "dark");
   }
 
-  const forcedTheme = "dark"; // Change this to "light" if you want to force light mode
+  const forcedTheme = "light"; // Change this to "light" if you want to force light mode
   setTheme(forcedTheme);
 
   window.themeController = {
