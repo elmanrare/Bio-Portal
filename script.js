@@ -426,24 +426,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- Theme toggle ---
-  const themeToggle = document.getElementById('theme-toggle');
-  function syncThemeIcon() {
-    const icon = document.querySelector('#theme-toggle [data-lucide]');
-    if (!icon || !window.themeController) return;
-    // Show the icon for the theme you'll switch *to*.
-    icon.setAttribute('data-lucide', window.themeController.getTheme() === 'dark' ? 'sun' : 'moon');
-    if (window.lucide) lucide.createIcons();
-  }
-  function switchTheme() {
-    if (!window.themeController) return;
-    const next = window.themeController.toggleTheme();
-    syncThemeIcon();
-    showToast(next === 'dark' ? 'Dark theme' : 'Light theme');
-  }
-  syncThemeIcon();
-  if (themeToggle) themeToggle.addEventListener('click', switchTheme);
-
   // --- Keyboard shortcuts ---
   function adjustVolume(delta) {
     if (!bgAudio) return;
@@ -503,10 +485,6 @@ document.addEventListener("DOMContentLoaded", () => {
         bgAudio.muted = isMuted;
         updateAudioIcon();
         showToast(isMuted ? 'Muted' : 'Unmuted');
-        break;
-      case 't':
-      case 'T':
-        switchTheme();
         break;
       default:
         break;

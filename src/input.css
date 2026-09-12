@@ -479,9 +479,7 @@ body.entered #shortcut-hint { animation-delay: 0.32s; }
 }
 
 html.dark #share-btn,
-html[data-theme="dark"] #share-btn,
-html.dark #theme-toggle,
-html[data-theme="dark"] #theme-toggle {
+html[data-theme="dark"] #share-btn {
 	border-color: rgba(255, 255, 255, 0.3);
 	background: rgba(255, 255, 255, 0.14);
 }
