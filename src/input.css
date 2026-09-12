@@ -412,3 +412,167 @@ html.dark .progress-fill,
 html[data-theme="dark"] .progress-fill {
 	background: linear-gradient(90deg, #e2e8f0, #94a3b8);
 }
+
+
+/* ---------- Enter gate polish ---------- */
+.gate-title {
+	animation: gate-float 3s ease-in-out infinite;
+}
+
+.gate-hint {
+	animation: gate-hint-pulse 2.2s ease-in-out infinite;
+}
+
+.gate-pulse-ring {
+	position: absolute;
+	width: 220px;
+	height: 220px;
+	border-radius: 9999px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	pointer-events: none;
+	animation: gate-ring 2.8s ease-out infinite;
+}
+
+@keyframes gate-float {
+	0%, 100% { transform: translateY(0); opacity: 0.92; }
+	50% { transform: translateY(-6px); opacity: 1; }
+}
+
+@keyframes gate-hint-pulse {
+	0%, 100% { opacity: 0.35; }
+	50% { opacity: 0.85; }
+}
+
+@keyframes gate-ring {
+	0% { transform: scale(0.7); opacity: 0.5; }
+	100% { transform: scale(1.15); opacity: 0; }
+}
+
+/* ---------- Entrance reveal ---------- */
+[data-reveal] {
+	opacity: 0;
+	transform: translateY(22px);
+}
+
+body.entered [data-reveal] {
+	animation: reveal-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+body.entered #tilt-card { animation-delay: 0.05s; }
+body.entered #music-player { animation-delay: 0.18s; }
+body.entered #shortcut-hint { animation-delay: 0.32s; }
+
+@media (prefers-reduced-motion: reduce) {
+	[data-reveal] { opacity: 1; transform: none; }
+	body.entered [data-reveal] { animation: none; }
+	.gate-title, .gate-hint, .gate-pulse-ring { animation: none; }
+}
+
+@keyframes reveal-in {
+	to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Toast ---------- */
+#toast.toast-show {
+	opacity: 1;
+	transform: translate(-50%, 0);
+}
+
+html.dark #share-btn,
+html[data-theme="dark"] #share-btn {
+	border-color: rgba(255, 255, 255, 0.3);
+	background: rgba(255, 255, 255, 0.14);
+}
+
+/* ---------- Discord activity ---------- */
+.discord-activity {
+	display: flex;
+	align-items: center;
+	gap: 0.65rem;
+	padding: 0.6rem 0.75rem;
+	border-radius: 0.85rem;
+	border: 1px solid var(--social-border);
+	background: var(--social-surface);
+	box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+}
+
+.discord-activity[hidden] { display: none; }
+
+.activity-art {
+	width: 2.6rem;
+	height: 2.6rem;
+	border-radius: 0.55rem;
+	object-fit: cover;
+	flex-shrink: 0;
+	box-shadow: 0 2px 8px rgba(15, 23, 42, 0.18);
+}
+
+.activity-art[hidden] { display: none; }
+
+.activity-name {
+	font-size: 0.72rem;
+	font-weight: 600;
+	color: #334155;
+}
+
+.activity-detail,
+.activity-state {
+	font-size: 0.68rem;
+	line-height: 1.25;
+	color: #64748b;
+}
+
+.activity-detail:empty,
+.activity-state:empty { display: none; }
+
+html.dark .discord-activity,
+html[data-theme="dark"] .discord-activity {
+	border-color: rgba(255, 255, 255, 0.16);
+	background: rgba(255, 255, 255, 0.08);
+}
+
+html.dark .activity-name,
+html[data-theme="dark"] .activity-name { color: #e5e7eb; }
+
+html.dark .activity-detail,
+html[data-theme="dark"] .activity-detail,
+html.dark .activity-state,
+html[data-theme="dark"] .activity-state { color: #cbd5e1; }
+
+/* ---------- Shortcut hint ---------- */
+.shortcut-hint {
+	max-width: 28rem;
+	opacity: 0.7;
+	transition: opacity 0.3s ease;
+}
+
+.shortcut-hint:hover { opacity: 1; }
+
+.shortcut-hint span {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.15rem;
+}
+
+.shortcut-hint kbd {
+	min-width: 1.1rem;
+	padding: 0.05rem 0.3rem;
+	border-radius: 0.3rem;
+	border: 1px solid var(--social-border);
+	background: var(--social-surface);
+	font-family: inherit;
+	font-size: 0.62rem;
+	line-height: 1.4;
+	text-align: center;
+	color: #475569;
+}
+
+html.dark .shortcut-hint,
+html[data-theme="dark"] .shortcut-hint { color: #9ca3af; }
+
+html.dark .shortcut-hint kbd,
+html[data-theme="dark"] .shortcut-hint kbd {
+	border-color: rgba(255, 255, 255, 0.2);
+	background: rgba(255, 255, 255, 0.1);
+	color: #e5e7eb;
+}
