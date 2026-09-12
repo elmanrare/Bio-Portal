@@ -17,8 +17,9 @@
     return setTheme(getTheme() === "dark" ? "light" : "dark");
   }
 
-  const forcedTheme = "dark"; // Change this to "light" if you want to force light mode
-  setTheme(forcedTheme);
+  const defaultTheme = "dark"; // Initial theme used when the visitor has no saved preference
+  const savedTheme = localStorage.getItem(storageKey);
+  setTheme(savedTheme === "light" || savedTheme === "dark" ? savedTheme : defaultTheme);
 
   window.themeController = {
     getTheme,
