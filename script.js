@@ -1,5 +1,5 @@
 import { updateViewCount } from "./database.js";
-import { fetchDiscordStatus } from "./discord.js";
+import { fetchDiscordStatus, startDiscordPolling } from "./discord.js";
 
 const titleTagText = document.querySelector("title")?.textContent.trim() || "Welcome";
 
@@ -354,6 +354,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (enterGate) {
     enterGate.addEventListener('click', () => {
       enterGate.classList.add('opacity-0');
+      document.body.classList.add('entered');
       setTimeout(() => enterGate.remove(), 700);
 
       if (bgAudio && playlist.length) {
@@ -373,6 +374,122 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   updateAudioIcon();
+
+  // --- Live local time for Georgia (Tbilisi) ---
+  const localTimeElem = document.getElementById('local-time');
+  if (localTimeElem) {
+    const timeFormatter = new Intl.DateTimeFormat('en-GB', {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+      timeZone: 'Asia/Tbilisi'
+    });
+    const renderLocalTime = () => {
+      localTimeElem.textContent = `· ${timeFormatter.format(new Date())}`;
+    };
+    renderLocalTime();
+    setInterval(renderLocalTime, 30000);
+  }
+
+  // --- Share / copy link ---
+  const shareBtn = document.getElementById('share-btn');
+  const toast = document.getElementById('toast');
+  let toastTimer = null;
+  function showToast(message) {
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.add('toast-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('toast-show'), 2200);
+  }
+  async function copyToClipboard(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch {
+      return false;
+    }
+  }
+  if (shareBtn) {
+    shareBtn.addEventListener('click', async () => {
+      const url = window.location.href;
+      const shareData = { title: document.title || config.username || 'Bio', url };
+      if (navigator.share) {
+        try {
+          await navigator.share(shareData);
+          return;
+        } catch {
+          // User dismissed the share sheet or it failed — fall back to copy.
+        }
+      }
+      showToast(await copyToClipboard(url) ? 'Link copied to clipboard' : url);
+    });
+  }
+
+  // --- Keyboard shortcuts ---
+  function adjustVolume(delta) {
+    if (!bgAudio) return;
+    const next = Math.min(1, Math.max(0, (isNaN(bgAudio.volume) ? 1 : bgAudio.volume) + delta));
+    bgAudio.volume = next;
+    isMuted = next === 0;
+    bgAudio.muted = isMuted;
+    if (volumeSlider) volumeSlider.value = String(next);
+    updateVolumeSliderVisual();
+    updateAudioIcon();
+  }
+
+  document.addEventListener('keydown', (event) => {
+    const target = event.target;
+    const isTyping = target instanceof HTMLElement &&
+      (target.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName));
+    if (isTyping || event.metaKey || event.ctrlKey || event.altKey) return;
+    if (!bgAudio) return;
+
+    switch (event.key) {
+      case ' ':
+      case 'Spacebar':
+        event.preventDefault();
+        if (playPauseBtn) playPauseBtn.click();
+        break;
+      case 'ArrowRight':
+        if (bgAudio.duration) {
+          event.preventDefault();
+          bgAudio.currentTime = Math.min(bgAudio.duration, bgAudio.currentTime + 5);
+        }
+        break;
+      case 'ArrowLeft':
+        if (bgAudio.duration) {
+          event.preventDefault();
+          bgAudio.currentTime = Math.max(0, bgAudio.currentTime - 5);
+        }
+        break;
+      case 'ArrowUp':
+        event.preventDefault();
+        adjustVolume(0.05);
+        break;
+      case 'ArrowDown':
+        event.preventDefault();
+        adjustVolume(-0.05);
+        break;
+      case 'n':
+      case 'N':
+        loadTrack(currentTrackIndex + 1, isPlaying);
+        break;
+      case 'p':
+      case 'P':
+        loadTrack(currentTrackIndex - 1, isPlaying);
+        break;
+      case 'm':
+      case 'M':
+        isMuted = !isMuted;
+        bgAudio.muted = isMuted;
+        updateAudioIcon();
+        showToast(isMuted ? 'Muted' : 'Unmuted');
+        break;
+      default:
+        break;
+    }
+  });
 });
 
 if (window.lucide) {
@@ -381,6 +498,7 @@ if (window.lucide) {
 
 
 document.addEventListener("DOMContentLoaded", fetchDiscordStatus);
+document.addEventListener("DOMContentLoaded", () => startDiscordPolling());
 document.addEventListener("DOMContentLoaded", updateViewCount);
 
   function startTitleAnimation(speed = 350, pauseDuration = 2000) {
