@@ -1,4 +1,4 @@
-const COUNTER_NAMESPACE = "elman.me"; // Change this to your own namespace to avoid conflicts with other users
+const COUNTER_NAMESPACE = "elman.me";
 const COUNTER_KEY = "views";
 
 export async function updateViewCount() {
@@ -6,22 +6,26 @@ export async function updateViewCount() {
   if (!counterEl) return;
 
   try {
-    const hasVisited = localStorage.getItem("visited_" + COUNTER_NAMESPACE);
-    const endpoint = hasVisited
-      ? `https://api.countapi.xyz/get/${COUNTER_NAMESPACE}/${COUNTER_KEY}`
-      : `https://api.countapi.xyz/hit/${COUNTER_NAMESPACE}/${COUNTER_KEY}`;
-    const response = await fetch(endpoint);
+    const storageKey = `visited_${COUNTER_NAMESPACE}`;
+    const isNewVisit = localStorage.getItem(storageKey) !== "true";
+    const response = await fetch("/api/views", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        namespace: COUNTER_NAMESPACE,
+        key: COUNTER_KEY,
+        isNewVisit
+      })
+    });
 
-    if (!hasVisited) {
-      localStorage.setItem("visited_" + COUNTER_NAMESPACE, "true");
-    }
-
+    if (!response.ok) throw new Error(`Counter request failed (${response.status})`);
     const data = await response.json();
-    if (data && data.value !== undefined) {
-      counterEl.textContent = data.value.toLocaleString();
-    }
+    if (!Number.isFinite(data.value)) throw new Error("Counter response was invalid");
+
+    if (isNewVisit) localStorage.setItem(storageKey, "true");
+    counterEl.textContent = data.value.toLocaleString();
   } catch (error) {
     console.error("View counter could not be loaded:", error);
-    counterEl.textContent = "1";
+    counterEl.textContent = "—";
   }
 }

@@ -13,7 +13,7 @@ If you cant understand what to do ask it to an AI model thats the easy way to cu
 
 - Profile name, avatar, bio, badges, location, and social links configured from a single file
 - Real-time Discord status through the [Lanyard API](https://github.com/Phineas/lanyard)
-- Unique visitor counting through CountAPI and browser `localStorage`
+- Unique visitor counting through a local NeDB database and browser `localStorage`
 - Play, pause, previous, next, seek, and volume controls for local audio tracks
 - Light and dark theme styling controlled through `theme.js`
 
@@ -24,18 +24,20 @@ If you cant understand what to do ask it to an AI model thats the easy way to cu
 
 ## Getting Started
 
-1. Install the dependencies and start the Tailwind watcher:
+1. Install dependencies and start the Tailwind watcher in a second terminal (optional):
 
    ```bash
    npm install
    npm run dev
    ```
 
-2. Serve the project root with any static server. For example, with `serve`:
+2. Start the site and local visitor-counter database:
 
    ```bash
-   npx serve .
+   npm start
    ```
+
+   Open `http://localhost:5000`. The database file `data/views.db` is created automatically. Do not open `index.html` directly or use a separate static server, because the counter API runs on this server.
 
 The page can be deployed to GitHub Pages, Netlify, or any static hosting provider. Keep the project files and asset paths together when uploading the site.
 
@@ -98,7 +100,7 @@ Open `discord.js` and replace the sample ID with your own Discord user ID. You a
 ## External Services
 
 - Lanyard provides the Discord status shown on the profile card.
-- CountAPI stores the public visitor count. The namespace and key are defined in `database.js`.
+- The local server stores visitor counts in `data/views.db`; the namespace and key are defined in `database.js`.
 - Font Awesome, Simple Icons, Iconify, Lucide, and Vanilla Tilt are loaded from CDNs in `index.html`.
 
 The page still works as a static profile if one of these services is unavailable, although live status or visitor data may not update.
@@ -113,7 +115,8 @@ Bio Portal/
 │   ├── input.css        # Tailwind source and custom styles
 │   └── output.css       # Compiled stylesheet loaded by index.html
 ├── config.js            # Profile, media, badges, and social-link settings
-├── database.js          # CountAPI visitor counter
+├── database.js          # Local visitor counter client
+├── server.js            # Static site server and NeDB API
 ├── discord.js           # Lanyard Discord status integration
 ├── index.html           # Page markup and CDN dependencies
 ├── script.js            # Profile rendering and audio-player behavior
