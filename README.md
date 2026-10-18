@@ -37,9 +37,40 @@ If you cant understand what to do ask it to an AI model thats the easy way to cu
    npm start
    ```
 
-   Open `http://localhost:5000`. The database file `data/views.db` is created automatically. Do not open `index.html` directly or use a separate static server, because the counter API runs on this server.
+   Open `http://localhost:5000`. The database file `data/views.db` is created automatically inside the project on first use. Do not open `index.html` directly or use a separate static server, because the counter API runs on this server.
 
-The page can be deployed to GitHub Pages, Netlify, or any static hosting provider. Keep the project files and asset paths together when uploading the site.
+For local development, `npm start` runs the Express server and stores the visitor count in `data/views.db`. The reusable `db.js` module initializes the embedded database and exposes async CRUD methods. Netlify uses the function in `netlify/functions/views.mjs` and persists the counter in Netlify Blobs. Static-only hosts such as GitHub Pages cannot run an API without a separate backend.
+
+### Local database CRUD
+
+`nedb-promises` is the embedded database used by the local server. It requires no database service and creates `data/views.db` when first used. Install it with `npm install nedb-promises`. From another CommonJS module, use the database like this:
+
+```js
+const db = require("./db");
+
+async function example() {
+  const record = await db.create({ name: "Example", active: true });
+  const records = await db.read({ active: true });
+  const updated = await db.update({ _id: record._id }, { active: false });
+  const deletedCount = await db.delete({ _id: record._id });
+}
+```
+
+The local database files are ignored by Git through `data/*.db` in `.gitignore`.
+
+### Manual Netlify deploy
+
+When Netlify is not connected to the GitHub repository, deploy from the project root with the Netlify CLI. Sign in and link this folder to the existing Netlify site once, then deploy:
+
+```bash
+npx netlify-cli login
+npx netlify-cli link
+npm run deploy:netlify
+```
+
+The deploy command uses `netlify.toml` to build `dist/` and explicitly uploads both the `views` function and static files. Do not use the drag-and-drop publisher for `dist/` alone, because that omits the API function.
+
+If the counter responds with `MissingBlobsEnvironmentError`, open the Netlify project’s environment variable settings and add `NETLIFY_SITE_ID` (Project ID) and `NETLIFY_BLOBS_TOKEN` (a Netlify personal access token). Mark the token as secret and redeploy. Never put the token in this repository or in browser-side code. Netlify normally supplies Blobs credentials to Functions; these settings are a fallback for manual deploys where that context is missing.
 
 ## Customization
 
@@ -115,6 +146,7 @@ Bio Portal/
 │   ├── input.css        # Tailwind source and custom styles
 │   └── output.css       # Compiled stylesheet loaded by index.html
 ├── config.js            # Profile, media, badges, and social-link settings
+├── db.js                # Local NeDB initialization and async CRUD operations
 ├── database.js          # Local visitor counter client
 ├── server.js            # Static site server and NeDB API
 ├── discord.js           # Lanyard Discord status integration
