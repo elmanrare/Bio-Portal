@@ -1,5 +1,6 @@
 window.config = {
   username: "Elman", // Your username
+  goatCounterCode: "elmanrare", // Your GoatCounter site code. Replace this with your own code when you fork the project.
   badges: [ // Your badges, you can add more by copying the format below and pasting it in the array,
     // also you can delete // from the start of the line to enable the badge
     { label: "Staff", icon: "https://discordapp.com/assets/4358ad1fb423b346324516453750f569.svg", color: "#0ea5e9" },

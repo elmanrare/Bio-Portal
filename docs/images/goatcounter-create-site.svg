@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470" role="img" aria-labelledby="title desc">
+  <title id="title">Illustration: create a GoatCounter site</title>
+  <desc id="desc">A guide illustration showing the steps to create a GoatCounter site for a custom domain.</desc>
+  <rect width="900" height="470" rx="18" fill="#f1f5f9"/>
+  <rect x="24" y="24" width="852" height="422" rx="14" fill="#fff" stroke="#cbd5e1"/>
+  <rect x="24" y="24" width="852" height="54" rx="14" fill="#0f172a"/>
+  <circle cx="52" cy="51" r="6" fill="#fb7185"/><circle cx="72" cy="51" r="6" fill="#fbbf24"/><circle cx="92" cy="51" r="6" fill="#34d399"/>
+  <text x="125" y="57" fill="#e2e8f0" font-family="Arial,sans-serif" font-size="17">GoatCounter — illustrative setup screen</text>
+  <text x="56" y="125" fill="#0f172a" font-family="Arial,sans-serif" font-size="28" font-weight="700">Create a separate site for your copy</text>
+  <text x="56" y="157" fill="#475569" font-family="Arial,sans-serif" font-size="17">Use the domain that visitors will open (for example, example.com).</text>
+  <text x="56" y="210" fill="#334155" font-family="Arial,sans-serif" font-size="16" font-weight="700">SITE NAME / HOSTNAME</text>
+  <rect x="56" y="226" width="788" height="58" rx="9" fill="#fff" stroke="#94a3b8"/>
+  <text x="78" y="263" fill="#0f172a" font-family="Consolas,monospace" font-size="19">example.com</text>
+  <rect x="56" y="316" width="788" height="67" rx="10" fill="#ecfeff" stroke="#67e8f9"/>
+  <text x="78" y="344" fill="#155e75" font-family="Arial,sans-serif" font-size="16" font-weight="700">Important</text>
+  <text x="78" y="369" fill="#155e75" font-family="Arial,sans-serif" font-size="15">Each project owner should use their own GoatCounter site/account.</text>
+  <text x="56" y="420" fill="#64748b" font-family="Arial,sans-serif" font-size="13">Illustration only. Button names and layout may differ in the live GoatCounter dashboard.</text>
+</svg>

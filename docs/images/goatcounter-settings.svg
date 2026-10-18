@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="600" viewBox="0 0 1120 600" role="img" aria-labelledby="title desc">
+  <title id="title">GoatCounter settings needed for the profile visitor counter</title>
+  <desc id="desc">An illustrative GoatCounter settings panel showing the registered site domain, the enabled visitor counter option, the optional iframe embedding field, and a reminder to save settings.</desc>
+  <rect width="1120" height="600" rx="18" fill="#0b1020"/>
+  <rect x="28" y="28" width="1064" height="544" rx="12" fill="#111827" stroke="#334155" stroke-width="2"/>
+  <rect x="28" y="28" width="1064" height="60" rx="12" fill="#25104b"/>
+  <path d="M28 76h1064" stroke="#6d28d9" stroke-width="2"/>
+  <text x="58" y="67" fill="#c4b5fd" font-family="Arial,sans-serif" font-size="23" font-weight="700">GoatCounter · Site settings (illustrative)</text>
+  <text x="60" y="128" fill="#f8fafc" font-family="Arial,sans-serif" font-size="25" font-weight="700">Site settings</text>
+  <text x="60" y="171" fill="#cbd5e1" font-family="Arial,sans-serif" font-size="17">Your site · enter the public hostname that visitors see</text>
+  <rect x="60" y="186" width="600" height="54" rx="6" fill="#050816" stroke="#64748b" stroke-width="2"/>
+  <text x="78" y="221" fill="#f8fafc" font-family="Arial,sans-serif" font-size="21">example.com</text>
+  <rect x="60" y="265" width="24" height="24" rx="3" fill="#22d3ee"/>
+  <path d="m66 277 5 5 9-11" fill="none" stroke="#082f49" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="98" y="283" fill="#f8fafc" font-family="Arial,sans-serif" font-size="20" font-weight="700">Allow adding visitor counts on your website</text>
+  <text x="60" y="324" fill="#94a3b8" font-family="Arial,sans-serif" font-size="16">Required for the public TOTAL.json count used by this project.</text>
+  <text x="60" y="369" fill="#cbd5e1" font-family="Arial,sans-serif" font-size="17">Sites that can embed GoatCounter · iframe embedding only</text>
+  <rect x="60" y="384" width="600" height="50" rx="6" fill="#050816" stroke="#64748b" stroke-width="2"/>
+  <text x="78" y="416" fill="#64748b" font-family="Arial,sans-serif" font-size="16">Not needed for this project's JSON fetch</text>
+  <rect x="60" y="468" width="600" height="60" rx="8" fill="#172554" stroke="#38bdf8" stroke-width="2"/>
+  <text x="82" y="494" fill="#bae6fd" font-family="Arial,sans-serif" font-size="17" font-weight="700">After changing settings:</text>
+  <text x="82" y="516" fill="#e0f2fe" font-family="Arial,sans-serif" font-size="16">Scroll to the bottom, save, then reload settings to verify.</text>
+  <rect x="700" y="144" width="350" height="330" rx="12" fill="#0f172a" stroke="#475569" stroke-width="2"/>
+  <text x="730" y="185" fill="#67e8f9" font-family="Arial,sans-serif" font-size="20" font-weight="700">Match the public site address</text>
+  <text x="730" y="230" fill="#f8fafc" font-family="Arial,sans-serif" font-size="17">Page opened at:</text>
+  <text x="730" y="258" fill="#a5f3fc" font-family="Consolas,monospace" font-size="17">https://example.com</text>
+  <text x="730" y="305" fill="#f8fafc" font-family="Arial,sans-serif" font-size="17">GoatCounter “Your site”:</text>
+  <text x="730" y="333" fill="#a5f3fc" font-family="Consolas,monospace" font-size="17">example.com</text>
+  <path d="M730 355h285" stroke="#334155" stroke-width="2"/>
+  <text x="730" y="393" fill="#cbd5e1" font-family="Arial,sans-serif" font-size="16">If the live site uses www, register</text>
+  <text x="730" y="418" fill="#cbd5e1" font-family="Arial,sans-serif" font-size="16">www.example.com instead, or redirect</text>
+  <text x="730" y="443" fill="#cbd5e1" font-family="Arial,sans-serif" font-size="16">to one canonical hostname.</text>
+  <text x="60" y="554" fill="#64748b" font-family="Arial,sans-serif" font-size="13">Illustration only. Labels and layout may differ in the live GoatCounter dashboard.</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470" role="img" aria-labelledby="title desc">
+  <title id="title">Illustration: find your GoatCounter site code</title>
+  <desc id="desc">A guide illustration highlighting the unique GoatCounter endpoint and site code.</desc>
+  <rect width="900" height="470" rx="18" fill="#f1f5f9"/>
+  <rect x="24" y="24" width="852" height="422" rx="14" fill="#fff" stroke="#cbd5e1"/>
+  <rect x="24" y="24" width="852" height="54" rx="14" fill="#0f172a"/>
+  <circle cx="52" cy="51" r="6" fill="#fb7185"/><circle cx="72" cy="51" r="6" fill="#fbbf24"/><circle cx="92" cy="51" r="6" fill="#34d399"/>
+  <text x="125" y="57" fill="#e2e8f0" font-family="Arial,sans-serif" font-size="17">Your GoatCounter site — illustrative</text>
+  <text x="56" y="128" fill="#0f172a" font-family="Arial,sans-serif" font-size="27" font-weight="700">Copy the unique site code</text>
+  <text x="56" y="164" fill="#475569" font-family="Arial,sans-serif" font-size="17">The site code is the subdomain before “.goatcounter.com”.</text>
+  <rect x="56" y="197" width="788" height="94" rx="11" fill="#0f172a"/>
+  <text x="82" y="234" fill="#7dd3fc" font-family="Consolas,monospace" font-size="18">https://</text>
+  <rect x="173" y="210" width="180" height="38" rx="5" fill="#164e63"/>
+  <text x="185" y="236" fill="#a5f3fc" font-family="Consolas,monospace" font-size="18" font-weight="700">your-site-code</text>
+  <text x="355" y="234" fill="#7dd3fc" font-family="Consolas,monospace" font-size="18">.goatcounter.com/count</text>
+  <text x="82" y="270" fill="#cbd5e1" font-family="Arial,sans-serif" font-size="14">Replace “your-site-code” in config.js with the highlighted part only.</text>
+  <rect x="56" y="320" width="788" height="62" rx="9" fill="#fefce8" stroke="#fde047"/>
+  <text x="78" y="358" fill="#854d0e" font-family="Arial,sans-serif" font-size="15">Do not use someone else’s code: their site visits would be mixed with yours.</text>
+  <text x="56" y="420" fill="#64748b" font-family="Arial,sans-serif" font-size="13">Illustration only. Use the code shown by your own account.</text>
+</svg>

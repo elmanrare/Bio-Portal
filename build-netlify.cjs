@@ -17,7 +17,6 @@ const publicPaths = [
 
 fs.rmSync(output, { recursive: true, force: true });
 fs.mkdirSync(output, { recursive: true });
-f 
 for (const item of publicPaths) {
   fs.cpSync(path.join(root, item), path.join(output, item), { recursive: true });
 }

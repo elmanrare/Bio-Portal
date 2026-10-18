@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470" role="img" aria-labelledby="title desc">
+  <title id="title">Visitor counter example on a profile site</title>
+  <desc id="desc">An illustrative profile card with an eye icon and the total page visit count.</desc>
+  <rect width="900" height="470" rx="18" fill="#dbeafe"/>
+  <rect x="24" y="24" width="852" height="422" rx="14" fill="#fff" stroke="#cbd5e1"/>
+  <rect x="24" y="24" width="852" height="54" rx="14" fill="#0f172a"/>
+  <circle cx="52" cy="51" r="6" fill="#fb7185"/><circle cx="72" cy="51" r="6" fill="#fbbf24"/><circle cx="92" cy="51" r="6" fill="#34d399"/>
+  <text x="125" y="57" fill="#e2e8f0" font-family="Arial,sans-serif" font-size="17">Example profile page</text>
+  <rect x="250" y="108" width="400" height="286" rx="24" fill="#f8fafc" stroke="#cbd5e1"/>
+  <circle cx="450" cy="178" r="42" fill="#bae6fd"/>
+  <text x="450" y="187" text-anchor="middle" fill="#0369a1" font-family="Arial,sans-serif" font-size="28" font-weight="700">ME</text>
+  <text x="450" y="250" text-anchor="middle" fill="#0f172a" font-family="Arial,sans-serif" font-size="25" font-weight="700">Your profile</text>
+  <text x="450" y="281" text-anchor="middle" fill="#64748b" font-family="Arial,sans-serif" font-size="16">Links, bio, and music go here</text>
+  <rect x="507" y="337" width="113" height="34" rx="17" fill="#e0f2fe" stroke="#bae6fd"/>
+  <text x="524" y="360" fill="#0369a1" font-family="Arial,sans-serif" font-size="17">◉</text>
+  <text x="548" y="360" fill="#0f172a" font-family="Arial,sans-serif" font-size="16" font-weight="700">1,284</text>
+  <text x="56" y="421" fill="#64748b" font-family="Arial,sans-serif" font-size="13">Illustrative result. The displayed total may be cached by GoatCounter for up to four hours.</text>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470" role="img" aria-labelledby="title desc">
+  <title id="title">Set the GoatCounter code in config.js</title>
+  <desc id="desc">A screenshot-style illustration of the GoatCounter setting in config.js.</desc>
+  <rect width="900" height="470" rx="18" fill="#e2e8f0"/>
+  <rect x="24" y="24" width="852" height="422" rx="14" fill="#111827"/>
+  <rect x="24" y="24" width="852" height="50" rx="14" fill="#1f2937"/>
+  <text x="50" y="57" fill="#e5e7eb" font-family="Arial,sans-serif" font-size="17">config.js  |  Code editor illustration</text>
+  <text x="58" y="125" fill="#94a3b8" font-family="Consolas,monospace" font-size="17">1</text>
+  <text x="96" y="125" fill="#c084fc" font-family="Consolas,monospace" font-size="17">window</text><text x="162" y="125" fill="#e5e7eb" font-family="Consolas,monospace" font-size="17">.config = {</text>
+  <text x="58" y="173" fill="#94a3b8" font-family="Consolas,monospace" font-size="17">2</text>
+  <rect x="87" y="145" width="730" height="42" rx="6" fill="#164e63"/>
+  <text x="108" y="173" fill="#67e8f9" font-family="Consolas,monospace" font-size="17">goatCounterCode:</text><text x="282" y="173" fill="#a7f3d0" font-family="Consolas,monospace" font-size="17">"your-site-code"</text><text x="464" y="173" fill="#94a3b8" font-family="Consolas,monospace" font-size="15">, // Your own GoatCounter site code</text>
+  <text x="58" y="221" fill="#94a3b8" font-family="Consolas,monospace" font-size="17">3</text>
+  <text x="108" y="221" fill="#67e8f9" font-family="Consolas,monospace" font-size="17">username:</text><text x="225" y="221" fill="#a7f3d0" font-family="Consolas,monospace" font-size="17">"Your Name"</text><text x="348" y="221" fill="#e5e7eb" font-family="Consolas,monospace" font-size="17">,</text>
+  <text x="58" y="269" fill="#94a3b8" font-family="Consolas,monospace" font-size="17">4</text>
+  <text x="108" y="269" fill="#67e8f9" font-family="Consolas,monospace" font-size="17">bio:</text><text x="165" y="269" fill="#a7f3d0" font-family="Consolas,monospace" font-size="17">"Your bio"</text><text x="265" y="269" fill="#e5e7eb" font-family="Consolas,monospace" font-size="17">,</text>
+  <text x="58" y="317" fill="#94a3b8" font-family="Consolas,monospace" font-size="17">5</text>
+  <text x="96" y="317" fill="#e5e7eb" font-family="Consolas,monospace" font-size="17">};</text>
+  <text x="58" y="382" fill="#cbd5e1" font-family="Arial,sans-serif" font-size="16">Change only the quoted value. Keep the quotes and comma.</text>
+  <text x="58" y="419" fill="#94a3b8" font-family="Arial,sans-serif" font-size="13">Illustration only; your real config.js already contains this setting.</text>
+</svg>
